@@ -63,7 +63,7 @@
             {{ session('success') }}
         </div>
     @endif
-    <form method="post">
+    <form method="post" action="{{ route("employee-store")}}">
         @csrf
         @method('POST')
         <h1>Create New Employee</h1>
@@ -72,8 +72,8 @@
             <input type="text" name="name" id="name">
         </div>
         <div>
-            <label for="Assign Task">Assign Task:</label>
-                <select name="task" id="task">
+            <label for="task">Assign Task:</label>
+                <select name="task_id" id="task">
                     @foreach ($tasks as $task)
                         <option value="{{ $task->id }}">{{ $task->name }}</option>
                     @endforeach
