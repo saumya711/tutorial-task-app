@@ -37,13 +37,13 @@
 
         /* Other styles */
 
-        body {
+        /* body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f3f4f6;
-        }
+        } */
 
         .container {
             text-align: center;

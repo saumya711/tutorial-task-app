@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
     public function index() {
-        return view('employee.index');
+        $employees = Employee::all();
+        $employeesDetails = DB::table('employees')
+            ->join('tasks', 'employees.task_id', '=', 'tasks.id')
+            ->select('employees.name as employee_name', 'tasks.name as task_name')
+            ->get();
+        
+        return view('employee.index', ['employees' => $employeesDetails]);
     }
 
     public function create() {
