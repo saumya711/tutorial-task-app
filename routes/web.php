@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// Route::redirect('/', '/task-list');
 
 Route::get('/task-create', [TaskController::class,'create'])->name('task.create');
 Route::post('/task', [TaskController::class,'store'])->name('task.store');

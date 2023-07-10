@@ -76,34 +76,34 @@
         <div class="container">
             <h1>Employee List</h1>
             <button onclick="location.href='{{ route('employee-create') }}'">Add Employee</button>
-            {{-- <table>
+            <table>
                 <thead>
                     <tr>
+                        <th>Employee Name</th>
                         <th>Task Name</th>
-                        <th>Category Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($tasks as $task)
+                    @foreach ($employees as $employee)
                     <tr>
-                        <td>{{ $task->name }}</td>
-                        <td>{{ $task->category }}</td>
+                        <td>{{ $employee->employee_name }}</td>
+                        <td>{{ $employee->task_name }}</td>
                         <td>
                             <div style="display: flex; gap: 10px;">
-                            <button onclick="location.href='{{ route('task-edit', $task->id) }}'">edit</button>
-                            <form method="post" action="{{ route('task-delete', $task->id ) }}" onSubmit="return confirm('Are You sure want to delete this task?')">
+                            <button >edit</button>
+                            {{-- <form method="post" action="{{ route('task-delete', $task->id ) }}" onSubmit="return confirm('Are You sure want to delete this task?')">
                                 @csrf
-                                @method('DELETE')
+                                @method('DELETE') --}}
                                 <button class="delete" type="submit">delete</button>
-                            </form>
+                            {{-- </form> --}}
                             </div>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
-            </table> --}}
+            </table>
         </div>
     </body>
 </html>
