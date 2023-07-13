@@ -31,9 +31,16 @@ class EmployeeController extends Controller
             'task_id' => 'nullable|exists:tasks,id',
         ]);
     
-        $employee = Employee::create($validatedData);
+        Employee::create($validatedData);
     
         return redirect('/employees')->with('success', 'Task Update Successfully');
+    }
+
+    public function edit ($id)
+    {
+        $employee = Employee::findOrFail($id);
+        $task = Task::all();
+        return view('employee.edit', ['employee' => $employee, 'task' => $task]);
     }
 
 }

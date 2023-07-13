@@ -92,12 +92,9 @@
                         <td>{{ $employee->task_name }}</td>
                         <td>
                             <div style="display: flex; gap: 10px;">
-                            <button >edit</button>
-                            {{-- <form method="post" action="{{ route('task-delete', $task->id ) }}" onSubmit="return confirm('Are You sure want to delete this task?')">
-                                @csrf
-                                @method('DELETE') --}}
+                                <button>edit</button>
                                 <button class="delete" type="submit">delete</button>
-                            {{-- </form> --}}
+                           
                             </div>
                         </td>
                     </tr>
