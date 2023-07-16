@@ -92,7 +92,7 @@
                         <td>{{ $employee->task_name }}</td>
                         <td>
                             <div style="display: flex; gap: 10px;">
-                                <button>edit</button>
+                                <button onclick="location.href='{{ route('employee-edit', $employee->id) }}'">edit</button>
                                 <button class="delete" type="submit">delete</button>
                            
                             </div>
